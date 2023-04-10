@@ -1,5 +1,7 @@
 #include <iostream>
 #include "board.h"
+#include <windows.h>
+
 using namespace std;
 
 
@@ -22,6 +24,7 @@ Board::~Board() {}
 
 void Board::refresh()
 {
+    system("cls");
     for(int i = 0; i < B_SIZE; i++) {
         for(int j = 0; j < B_SIZE; j++) {
             cout << board[i][j];

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "board.h"
 #include "player.h"
+#include <windows.h>
+
 
 using namespace std;
 
@@ -8,9 +10,19 @@ int main() {
     Board level_1;
     Player player;
 
-    level_1.board[1][0] = player.getPosition();
+    player.x = 1;
+    player.y = 0;
 
-    level_1.refresh();
+
+
+    while(true) {
+        level_1.refresh();
+        player.getInput();
+        if(player.isMoving) { level_1.board[player._x][player._y] = ' ';}
+        level_1.board[player.x][player.y] = player.getPosition();
+        Sleep(50);
+    }
+    
 
     return 0;
 }

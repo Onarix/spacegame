@@ -9,5 +9,6 @@ struct Board{
 
    void refresh();
    char startPosition();
+   void push();
 
 };
